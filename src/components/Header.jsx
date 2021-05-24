@@ -7,8 +7,8 @@ import InputBase from "@material-ui/core/InputBase";
 import { fade, makeStyles } from "@material-ui/core/styles";
 import MenuIcon from "@material-ui/icons/Menu";
 import SearchIcon from "@material-ui/icons/Search";
-import {MenuList, MenuItem} from '@material-ui/core';
-import {Link} from 'react-router-dom';
+import { MenuList, MenuItem } from "@material-ui/core";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -65,46 +65,51 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Header(){
-  
-    const classes = useStyles();
+export default function Header() {
+  const classes = useStyles();
+  const menuItems = [
+      {label: 'Home', path:'/'},
+      {label: 'About', path:'/about'},
+      {label: 'Blog', path:'/blog'}
+  ];
 
-    return (
-      <div className={classes.root}>
-        <AppBar position="static">
-          <Toolbar>
-            <IconButton
-              edge="start"
-              className={classes.menuButton}
-              color="inherit"
-              aria-label="open drawer"
-            >
-              <MenuIcon />
-            </IconButton>
-            <MenuList style={{display:'flex'}}>
-                <MenuItem component={Link} to='/' selected='true'>Home</MenuItem>
-                <MenuItem component={Link} to='/about'>About</MenuItem>
-            </MenuList>
-            <Typography className={classes.title} variant="h6" noWrap>
-              MikeCameron.dev
-            </Typography>
-            <div className={classes.search}>
-              <div className={classes.searchIcon}>
-                <SearchIcon />
-              </div>
-              <InputBase
-                placeholder="Search…"
-                classes={{
-                  root: classes.inputRoot,
-                  input: classes.inputInput,
-                }}
-                inputProps={{ "aria-label": "search" }}
-              />
+  return (
+    <div className={classes.root}>
+      <AppBar position="static">
+        <Toolbar>
+          <IconButton
+            edge="start"
+            className={classes.menuButton}
+            color="inherit"
+            aria-label="open drawer"
+          >
+            <MenuIcon />
+          </IconButton>
+          <MenuList style={{ display: "flex" }}>
+              {menuItems.map((item) => (
+                <MenuItem component={Link} to={item.path} selected={true}>
+                {item.label}
+              </MenuItem>
+              ))}
+          </MenuList>
+          <Typography className={classes.title} variant="h6" noWrap>
+            MikeCameron.dev
+          </Typography>
+          <div className={classes.search}>
+            <div className={classes.searchIcon}>
+              <SearchIcon />
             </div>
-          </Toolbar>
-        </AppBar>
-        
-      </div>
-    );
-  
+            <InputBase
+              placeholder="Search…"
+              classes={{
+                root: classes.inputRoot,
+                input: classes.inputInput,
+              }}
+              inputProps={{ "aria-label": "search" }}
+            />
+          </div>
+        </Toolbar>
+      </AppBar>
+    </div>
+  );
 }

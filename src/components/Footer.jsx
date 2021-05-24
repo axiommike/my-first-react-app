@@ -8,10 +8,10 @@ import Moment from 'react-moment';
 
 export default function Footer() {
     return (
-        <AppBar position="bottom" color="primary">
+        <AppBar position="static" color="primary" style={{marginTop: 600}}>
           <Container maxWidth="md">
-            <Toolbar>
-              <Typography variant="body1" color="inherit">
+            <Toolbar >
+              <Typography variant="body1" color="inherit" >
                 © <Moment format='yyyy' /> Mike Cameron
               </Typography>
             </Toolbar>
