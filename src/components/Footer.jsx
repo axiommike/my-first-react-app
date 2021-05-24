@@ -8,7 +8,8 @@ import Moment from 'react-moment';
 
 export default function Footer() {
     return (
-        <AppBar position="static" color="primary" style={{marginTop: 600}}>
+        <AppBar position="static" color="primary" style={{position: 'fixed',
+            bottom: 0 }}>
           <Container maxWidth="md">
             <Toolbar >
               <Typography variant="body1" color="inherit" >

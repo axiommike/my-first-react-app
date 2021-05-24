@@ -8,7 +8,7 @@ import { fade, makeStyles } from "@material-ui/core/styles";
 import MenuIcon from "@material-ui/icons/Menu";
 import SearchIcon from "@material-ui/icons/Search";
 import { MenuList, MenuItem } from "@material-ui/core";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -68,11 +68,11 @@ const useStyles = makeStyles((theme) => ({
 export default function Header() {
   const classes = useStyles();
   const menuItems = [
-      {label: 'Home', path:'/'},
-      {label: 'About', path:'/about'},
-      {label: 'Blog', path:'/blog'}
+    { label: "Home", path: "/" },
+    { label: "About", path: "/about" },
+    { label: "Blog", path: "/blog" },
   ];
-
+   const location = useLocation();
   return (
     <div className={classes.root}>
       <AppBar position="static">
@@ -85,16 +85,17 @@ export default function Header() {
           >
             <MenuIcon />
           </IconButton>
-          <MenuList style={{ display: "flex" }}>
-              {menuItems.map((item) => (
-                <MenuItem component={Link} to={item.path} selected={true}>
-                {item.label}
-              </MenuItem>
-              ))}
-          </MenuList>
           <Typography className={classes.title} variant="h6" noWrap>
             MikeCameron.dev
           </Typography>
+          <MenuList style={{ display: "flex" }}>
+            {menuItems.map((item) => (
+              <MenuItem component={Link} to={item.path} selected={location.pathname === item.path}>
+                {item.label}
+              </MenuItem>
+            ))}
+          </MenuList>
+
           <div className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon />

@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import NotFound from "./components/NotFound";
 import Home from "./components/Home";
 import About from "./components/About";
+import Archive from "./components/Archive";
 
 function App() {
   return (
@@ -15,10 +16,10 @@ function App() {
             <Route path="/about">
               <About />
             </Route>
-            <Route path="/users">
-              Users Page
+            <Route path="/blog">
+              <Archive />
             </Route>
-            <Route path="/">
+            <Route exact path="/">
               <Home />
             </Route>
             <Route><NotFound /></Route>
