@@ -90,7 +90,7 @@ export default function Header() {
           </Typography>
           <MenuList style={{ display: "flex" }}>
             {menuItems.map((item) => (
-              <MenuItem component={Link} to={item.path} selected={location.pathname === item.path}>
+              <MenuItem component={Link} to={item.path} selected={location.pathname === item.path} key={item.path}>
                 {item.label}
               </MenuItem>
             ))}
