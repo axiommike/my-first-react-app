@@ -1,9 +1,7 @@
-import React, {useEffect } from 'react'
+import React from 'react'
 import axios from 'axios';
 
-import { Component } from 'react'
-import { CircularProgress, MenuItem, Paper, Typography } from '@material-ui/core';
-import {renderHTML} from 'react-render-html';
+import { CircularProgress,  Paper, Typography } from '@material-ui/core';
 
 export default class Single extends React.Component {
     constructor(props) {
