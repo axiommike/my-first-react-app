@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Card, CardContent, CardHeader, Grid } from "@material-ui/core";
+import { Button, Card, CardContent, CardHeader, Grid } from "@material-ui/core";
+import { Link } from "react-router-dom";
 
 
 export default class Archive extends Component {
@@ -23,19 +24,20 @@ export default class Archive extends Component {
   render() {
     let posts = this.state.posts;
     return (
-     
-        <Grid container>
-          {posts.map((item) => (
-              
-            <Grid item sm={4} key={item.id}>
-              <Card>
-                <CardHeader title={item.title.rendered} subheader={item.date}></CardHeader>
-                <CardContent>{item.content.rendered}</CardContent>
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
-      
+      <Grid container>
+        {posts.map((item) => (
+          <Grid item sm={4} key={item.id}>
+            <Card>
+              <CardHeader
+                title={item.title.rendered}
+                subheader={item.date}
+              ></CardHeader>
+              <CardContent>{item.content.rendered}</CardContent>
+            </Card>
+            <Button component={Link} to={"post/"+item.slug}>Read more...</Button>
+          </Grid>
+        ))}
+      </Grid>
     );
   }
 }

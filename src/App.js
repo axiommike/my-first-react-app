@@ -5,6 +5,7 @@ import NotFound from "./components/NotFound";
 import Home from "./components/Home";
 import About from "./components/About";
 import Archive from "./components/Archive";
+import Single from "./components/Single";
 
 function App() {
   return (
@@ -19,11 +20,14 @@ function App() {
             <Route path="/blog">
               <Archive />
             </Route>
+            <Route path="/post/:slug" component={Single}>
+            
+            </Route>
             <Route exact path="/">
               <Home />
             </Route>
             <Route><NotFound /></Route>
-          </Switch>
+          </Switch> 
         
       </Layout>
       </Router>
