@@ -12,7 +12,7 @@ export default class Archive extends Component {
 
   componentDidMount() {
     axios
-      .get("https://mikecameron.ca/wp-json/wp/v2/posts/")
+      .get("https://mikecameron.ca/wp-json/wp/v2/posts/?_embed")
       .then((res) =>
         this.setState({
           posts: res.data,
