@@ -8,6 +8,10 @@ import {
   Grid,
   Typography,
 } from "@material-ui/core";
+import card1 from '../img/card1.jpg'
+import card2 from '../img/card2.jpg'
+import card3 from '../img/card3.jpg'
+
 
 export default function Home() {
   return (
@@ -43,43 +47,44 @@ export default function Home() {
           </Typography>
         </CardContent>
       </Card>
-      
+
       <hr />
       <Grid container spacing={1}>
         <Grid item lg={4}>
           <Card>
             <CardMedia
-              height="140"
+              height="240"
               component="img"
-              image="https://mikecameron.ca/wp-content/uploads/2021/05/imposter-syndrome-768x432.png"
+              src={card1}
+            />
+            <CardHeader
+              title="A card with react Material-UI"
+              subheader="First go round playing with Material UI Grid"
+            ></CardHeader>
+            <CardContent><p>This is an example of &lt;Cards&gt; inside of Material UI &lt;Grid/&gt;&nbsp;</p>
+            </CardContent>
+          </Card>
+        </Grid>
+        <Grid item lg={4}>
+          <Card style={{marginBottom: 40}}>
+            <CardMedia
+              height="200"
+              component="img"
+              src={card2}
             />
             <CardHeader
               title="This is a feature card"
               subheader="This would be a cool tagline"
             ></CardHeader>
-            <CardContent>This would be all the awesome content</CardContent>
+            <CardContent><p>Perhaps I could put a little bit in here about me. I love, love, love learning and technology so here we go learning React. I&#39;m really enjoying playing with Material-UI <strong>&lt;Grid&gt;</strong> and <strong>&lt;Card&gt; </strong>components. I think the next step will be to build out a contact form. Perhaps play with Sendgrid API. I am really enjoying this full seperation of front end from the back. Anyhow I&#39;d invite you to drop a comment but I have no back end here yet. Maybe that will come soon as well. For now I am tapping into my Wordpress API to pull a few blog articles.</p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p></CardContent>
           </Card>
         </Grid>
         <Grid item lg={4}>
           <Card>
             <CardMedia
-              height="140"
+              height="240"
               component="img"
-              image="https://mikecameron.ca/wp-content/uploads/2021/05/imposter-syndrome-768x432.png"
-            />
-            <CardHeader
-              title="This is a feature card"
-              subheader="This would be a cool tagline"
-            ></CardHeader>
-            <CardContent>This would be all the awesome content</CardContent>
-          </Card>
-        </Grid>
-        <Grid item lg={4}>
-          <Card>
-            <CardMedia
-              height="140"
-              component="img"
-              image="https://mikecameron.ca/wp-content/uploads/2021/05/imposter-syndrome-768x432.png"
+              src={card3}
             />
             <CardHeader
               title="This is a new feature card"

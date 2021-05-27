@@ -6,6 +6,7 @@ import Home from "./components/Home";
 import About from "./components/About";
 import Archive from "./components/Archive";
 import Single from "./components/Single";
+import Contact from "./components/Contact";
 
 function App() {
   return (
@@ -22,6 +23,8 @@ function App() {
             </Route>
             <Route path="/post/:slug" component={Single}>
             
+            </Route>
+            <Route path="/contact" component={Contact}>
             </Route>
             <Route exact path="/">
               <Home />

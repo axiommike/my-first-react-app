@@ -71,6 +71,7 @@ export default function Header() {
     { label: "Home", path: "/" },
     { label: "About", path: "/about" },
     { label: "Blog", path: "/blog" },
+    { label: "Contact Me", path: "/contact"}
   ];
    const location = useLocation();
   return (
