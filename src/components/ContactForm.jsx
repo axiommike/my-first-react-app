@@ -7,7 +7,7 @@ import validator from 'validator';
 const useStyles = theme => ({
     root: {
         '& .MuiFormControl-root': {
-            width: '80%',
+            width: '70%',
             margin: theme.spacing(1)
         }
     },
@@ -23,7 +23,7 @@ class ContactForm extends Component {
         buttonText: "Send Message",
         emailError: '',
         notificationStatus: false,
-        notifcationSeverity: 'success',
+        notifcationSeverity: '',
         notification: ''
     };
 
@@ -31,12 +31,6 @@ class ContactForm extends Component {
         var email = e.target.value
         validator.isEmail(email) ? this.setState({ emailError: '' }) : this.setState({ emailError: 'Invalid Email' })
         this.setState({ email: e.target.value });
-        // this.setState({
-        //     notification: 'Email has changed!'+e.target.value,
-        //     notifcationSeverity: 'info',
-        //     notificationStatus: true,
-        //     emailError: 'etetaear'
-        // })
     }
     sendEmail() {
         const sgMail = require('@sendgrid/mail');
@@ -54,9 +48,8 @@ class ContactForm extends Component {
         sgMail
             .send(msg)
             .then(() => { }, error => {
-                this.setState({notification:'Something went wrong', notificationStatus: true})
+                this.setState({notification:'Something went wrong11',  notificationSeverity: 'error', notificationStatus: true,})
                 console.error(error);
-
                 if (error.response) {
                     console.error(error.response.body)
                 }
