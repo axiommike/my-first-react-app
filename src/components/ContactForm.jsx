@@ -39,7 +39,7 @@ class ContactForm extends Component {
     axios
       .post("/sendmail", { email: email, message: message, name: name })
       .then((response) => {
-          if(response.data[0].status == 202){
+          if(response.data[0].status === 202){
                     //all good
                     this.setState({
                         notification: "Your message has been sent!",
