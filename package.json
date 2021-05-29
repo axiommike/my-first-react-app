@@ -1,7 +1,7 @@
 {
   "name": "my-first-app",
   "version": "0.1.0",
-  "proxy": "https://sendgrid.api-docs.io",
+  "proxy": "http://localhost:5000",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.11.4",
